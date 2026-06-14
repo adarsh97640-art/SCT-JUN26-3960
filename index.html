@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fixed Interactive Navigation</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <title>Stopwatch App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="navbar" id="navbar">
-      <a class="brand" href="#top">Skillcraft</a>
-      <ul class="nav-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <h1>Welcome to Skillcraft</h1>
-      <p>Scroll down to see the navigation bar style change.</p>
-    </section>
+<div class="container">
+    <h1>⏱ Stopwatch</h1>
 
-    <section id="about" class="content-section">
-      <h2>About</h2>
-      <p>This navigation menu stays fixed at the top and highlights items on hover.</p>
-    </section>
+    <div id="display">00:00:00</div>
 
-    <section id="services" class="content-section">
-      <h2>Services</h2>
-      <p>Use the menu to jump to sections. The bar changes color when you scroll.</p>
-    </section>
+    <div class="buttons">
+        <button onclick="startStopwatch()">Start</button>
+        <button onclick="pauseStopwatch()">Pause</button>
+        <button onclick="resetStopwatch()">Reset</button>
+        <button onclick="recordLap()">Lap</button>
+    </div>
 
-    <section id="contact" class="content-section">
-      <h2>Contact</h2>
-      <p>All pages can include this fixed navigation for consistent site-wide access.</p>
-    </section>
-  </main>
+    <h2>Lap Times</h2>
+    <ul id="laps"></ul>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

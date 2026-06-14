@@ -1,0 +1,126 @@
+:root {
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --nav-bg-scrolled: rgba(30, 30, 60, 0.95);
+  --nav-text: #1f2937;
+  --nav-text-scrolled: #f8fafc;
+  --nav-accent: #2563eb;
+  --nav-accent-hover: #93c5fd;
+  --body-bg: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--body-bg);
+  color: #111827;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--nav-bg);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(14px);
+}
+
+.navbar.scrolled {
+  background: var(--nav-bg-scrolled);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--nav-text);
+  text-decoration: none;
+}
+
+.navbar.scrolled .brand {
+  color: var(--nav-text-scrolled);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 0.55rem 0.75rem;
+  border-radius: 999px;
+  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.navbar.scrolled .nav-list a {
+  color: var(--nav-text-scrolled);
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--nav-accent);
+  transform: translateY(-1px);
+}
+
+.navbar.scrolled .nav-list a:hover,
+.navbar.scrolled .nav-list a:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--nav-accent-hover);
+}
+
+main {
+  padding-top: 92px;
+}
+
+.hero {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.content-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.content-section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.content-section h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
